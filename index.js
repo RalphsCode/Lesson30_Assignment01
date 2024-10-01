@@ -19,7 +19,18 @@ app.get('/', function(req, res) {
 
 app.get('/mean', function(req, res) {
     // mean page
-    return res.send('mean page :<');
+    const nums = req.query.nums;
+    // If 'nums' exists, split it into an array
+    const numArray = nums ? nums.split(',') : [];
+    let sum = 0;
+    let i = 0;
+    while (i < numArray.length) {
+        sum = sum + parseInt(numArray[i]);
+        i++;
+    }
+    const mean = sum / numArray.length; 
+    const result = {'operation':'mean', 'value': mean }
+    return res.json(result);
 } )  // END mean route
 
 
