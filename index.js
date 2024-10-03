@@ -32,7 +32,7 @@ app.get('/:calc', function(req, res, next) {
                 throw new MathError('NaN found in passed in paramaters.', 400) }  // END if...
 
             // sum the values in the array
-            sum = sum + parseInt(numArray[i]);
+            sum = sum + numArray[i];
             i++; }  // END while loop
         
         // Get the route to use from the URL paramater   
