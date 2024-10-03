@@ -6,4 +6,5 @@ class MathError extends Error {
     }
 }
 
+// Export the Class
 module.exports = MathError;

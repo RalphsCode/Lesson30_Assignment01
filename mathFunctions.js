@@ -3,7 +3,9 @@ function mean(sum, numArray){
     console.log('In the mean function in mathFunctions.js');
     const mean = sum / numArray.length; 
     return (Number(mean.toFixed(2)));
-    }
+    }  // END mean()
+    
+
 
 // MEDIAN Calculation
 function median(numArray){
@@ -20,31 +22,37 @@ function median(numArray){
         // Even length, return the average of the two middle elements
         return (numArray[middle - 1] + numArray[middle]) / 2;
     }
-}
+}  // END median()
 
+
+
+// MODE Calculation
 function mode(numArray) {
     const frequencyMap = {};
     let maxFrequency = 0;
     let modes = [];
 
-    // Step 1: Count the frequency of each element
+    // Count the frequency of each element
     numArray.forEach(num => {
-        frequencyMap[num] = (frequencyMap[num] || 0) + 1; // Count occurrences
+        frequencyMap[num] = (frequencyMap[num] || 0) + 1;
+        // Track the highest frequency
         if (frequencyMap[num] > maxFrequency) {
-            maxFrequency = frequencyMap[num]; // Track the highest frequency
+            maxFrequency = frequencyMap[num]; 
         }
     });
 
-    // Step 2: Identify the mode(s)
+    // Identify the mode(s)
     for (const num in frequencyMap) {
         if (frequencyMap[num] === maxFrequency) {
             modes.push(Number(num)); // Collect the number(s) with the highest frequency
         }
     }
 
-    // Step 3: Return the modes array (it may contain one or more modes)
+    // Return the modes as an array cuz it may contain one or more modes
     return modes;
-}
+} // END mode()
 
 
+
+// Export the functions
 module.exports = { mean, median, mode };
