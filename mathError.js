@@ -3,7 +3,6 @@ class MathError extends Error {
         super();
         this.msg = msg;
         this.status = status;
-        console.error(this.stack);
     }
 }
 
